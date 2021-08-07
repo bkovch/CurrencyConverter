@@ -1,0 +1,25 @@
+I was unable to get Flask working with Docker, so I had to test it without Docker. If this is not an issue on your configuration, feel free to use Docker.
+
+To run and test this application in Windows use command prompt (CMD or PowerShell) and run these commands:
+
+1. To set up a python environment environment:
+    cd ./CurrencyConverter
+    python -m venv env
+    env\Scripts\activate
+    python -m pip install --upgrade pip	
+    pip install -r requirements.txt --no-cache-dir
+    deactivate
+
+2. To run application as a server using Flask:
+    env\Scripts\activate
+    set Flask_APP=application
+    flask run
+    
+3. To call this application, use another command line window:
+    curl http://127.0.0.1:5000/get_currency_rate/USD/EUR
+    curl http://127.0.0.1:5000/convert_amount/USD/EUR/100
+    
+4. To shut down the server:
+    press CTRL+C
+    deactivate
+
